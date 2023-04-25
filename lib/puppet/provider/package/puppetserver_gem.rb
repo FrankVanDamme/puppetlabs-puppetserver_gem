@@ -76,7 +76,7 @@ Puppet::Type.type(:package).provide :puppetserver_gem, :parent => :gem do
           command << "--source" << "#{source}" << resource[:name]
       end
     else
-      command << "--no-rdoc" << "--no-ri" << resource[:name]
+      command << resource[:name]
     end
 
     output = execute(command, CMD_ENV)
